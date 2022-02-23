@@ -9,11 +9,10 @@ const displayCountries = countries => {
         const card = document.createElement("li");
         card.classList.add("card");
         card.innerHTML = `
-        <img width="200" height="100" src="${country.flag}">
+        <img class="shadow" width="200" height="100" src="${country.flag}">
         <h3>${country.name}</h3>
         <h5>Capital: <span class="color-red">${country.capital}</span></h5>
-        <h6>Population: <em>${country.population}</em></h6>
-        <button onclick="moreDetails('${country.name}')">More...</button>
+        <button onclick="moreDetails('${country.name}')">Click to see details...</button>
         `;
         listContainer.appendChild(card);
     });

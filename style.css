@@ -10,6 +10,7 @@ section{
 display: grid;
 grid-template-columns: 1fr 1fr 1fr 1fr;
 grid-gap: 10px;
+background-color: #edf1f5;
 }
 .card{
     color: black;
@@ -28,8 +29,12 @@ grid-gap: 10px;
 }
 button{
     border: none;
-    background-color: inherit;
-    font-size: large;
+    background-color: rgb(12, 8, 255);
+    color: white;
+    margin-top: 5px;
+    display: block;
+    width: 100%;
+    border-radius: 30px;
 }
 @media screen and (max-width:760px) {
     #list{
