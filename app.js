@@ -6,7 +6,6 @@ const getCountries = () => {
 const displayCountries = countries => {
     const listContainer = document.getElementById("list");
     countries.forEach(country => {
-        console.log(country.population);
         const card = document.createElement("li");
         card.classList.add("card");
         card.innerHTML = `
@@ -14,8 +13,32 @@ const displayCountries = countries => {
         <h3>${country.name}</h3>
         <h5>Capital: <span class="color-red">${country.capital}</span></h5>
         <h6>Population: <em>${country.population}</em></h6>
+        <button onclick="moreDetails('${country.name}')">More...</button>
         `;
         listContainer.appendChild(card);
     });
+}
+const moreDetails = (name) => {
+    fetch(`https://restcountries.com/v2/name/${name}`)
+        .then(sData => sData.json())
+        .then(data => showMoreDetails(data));
+}
+const showMoreDetails = showDataCountries => {
+    showDataCountries.forEach(showDataCountry => {
+        console.log(showDataCountry);
+        alert(`
+        Name: ${showDataCountry.name}
+        Capital: ${showDataCountry.capital}
+        Total area: ${showDataCountry.area}
+        Population: ${showDataCountry.population}
+        Currencies: ${showDataCountry.currencies}
+        Languages: ${showDataCountry.languages}
+        Borders with: ${showDataCountry.borders}
+        Calling Code: ${showDataCountry.callingCodes}
+        Timezones: ${showDataCountry.timezones}
+        Region: ${showDataCountry.region}
+        Are Independent: ${showDataCountry.independent}
+        `)
+    })
 }
 getCountries();

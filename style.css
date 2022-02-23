@@ -26,6 +26,11 @@ grid-gap: 10px;
 .color-red{
     color: red;
 }
+button{
+    border: none;
+    background-color: inherit;
+    font-size: large;
+}
 @media screen and (max-width:760px) {
     #list{
         grid-template-columns: 1fr;
