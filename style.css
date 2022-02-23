@@ -10,7 +10,6 @@ section{
 display: grid;
 grid-template-columns: 1fr 1fr 1fr 1fr;
 grid-gap: 10px;
-background-color: #edf1f5;
 }
 .card{
     color: black;
