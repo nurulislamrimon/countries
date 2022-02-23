@@ -12,7 +12,7 @@ const displayCountries = countries => {
         const card = document.createElement("li");
         card.classList.add("card");
         card.innerHTML = `
-        <img class="shadow" width="200" height="100" src="${country.flag}">
+        <img width="200" height="100" src="${country.flag}">
         <h3>${country.name}</h3>
         <h5>Capital: <span class="color-red">${country.capital}</span></h5>
         <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="moreDetails('${country.name}')">Click to see details...</button>
