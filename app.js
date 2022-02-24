@@ -27,13 +27,20 @@ const moreDetails = (name) => {
 }
 const showMoreDetails = showDataCountries => {
     showDataCountries.forEach(showDataCountry => {
+        const getMore = input => {
+            let output = "";
+            input.forEach(element => {
+                output += element.name;
+            })
+            return output;
+        }
         modalContent.innerHTML = `
         <h3><span class="popup-left-content">Name :</span> <span>${showDataCountry.name}</span></h3>
         <h3><span class="popup-left-content">Capital :</span> <span>${showDataCountry.capital}</span></h3>
         <h3><span class="popup-left-content">Total area :</span> <span>${showDataCountry.area}</span></h3>
         <h3><span class="popup-left-content">Population :</span> <span>${showDataCountry.population}</span></h3>
-        <h3><span class="popup-left-content">Currencies :</span> <span>${showDataCountry.currencies}</span></h3>
-        <h3><span class="popup-left-content">Languages :</span> <span>${showDataCountry.languages}</span></h3>
+        <h3><span class="popup-left-content">Currencies :</span> <span>${getMore(showDataCountry.currencies)}</span></h3>
+        <h3><span class="popup-left-content">Languages :</span> <span>${getMore(showDataCountry.languages)}</span></h3>
         <h3><span class="popup-left-content">Borders with :</span> <span>${showDataCountry.borders}</span></h3>
         <h3><span class="popup-left-content">Calling Code :</span> <span>${showDataCountry.callingCodes}</span></h3>
         <h3><span class="popup-left-content">Timezones :</span> <span>${showDataCountry.timezones}</span></h3>
@@ -43,6 +50,3 @@ const showMoreDetails = showDataCountries => {
     })
 }
 getCountries();
-
-// ===========closeBtn=========
-closeBtn.addEventListener("click", () => modalContent.style.display = "none")
